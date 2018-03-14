@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">StayFit</string>
+    <string name="undefined">Undefined</string>
+
+    <string name="main_graphs">Progress Graphs</string>
+    <string name="main_graphs_mass">Mass Gain</string>
+    <string name="main_graphs_example">Example graph</string>
+    <string name="main_graphs_bench_press">Bench Press</string>
+
+    <string name="main_next_training">Next training %s</string>
+    <string name="main_welcome">Welcome back, %s!</string>
+    <string name="main_achievement">You do %d trainings in a row!</string>
+
+    <string name="main_start_training">Start training now!</string>
+    <string name="featured">Featured</string>
+</resources>
