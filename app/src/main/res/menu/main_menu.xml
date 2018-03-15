@@ -2,6 +2,29 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item" />
-    <item android:title="Item" />
+    <group >
+        <item
+            android:id="@+id/menu_personal_settings"
+            android:icon="@drawable/ic_personal"
+            android:title="@string/personal_settings" />
+        <item
+            android:id="@+id/menu_program_browser"
+            android:icon="@drawable/ic_training"
+            android:title="@string/program_browser" />
+        <item
+            android:id="@+id/menu_excercise_browser"
+            android:icon="@drawable/ic_excercise"
+            android:title="@string/excercise_browser" />
+    </group>
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/menu_about"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/about" />
+    <item
+        android:id="@+id/menu_exit"
+        android:title="@string/exit" />
 </menu>

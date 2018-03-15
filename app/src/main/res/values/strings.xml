@@ -13,4 +13,10 @@
 
     <string name="main_start_training">Start training now!</string>
     <string name="featured">Featured</string>
+    <string name="personal_settings">My Parameters</string>
+    <string name="excercise_browser">Excercise Browser</string>
+    <string name="program_browser">Program Browser</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="exit">Exit</string>
 </resources>
