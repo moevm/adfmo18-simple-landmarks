@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit
+package com.breezesoftware.stayfit.personal
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import com.breezesoftware.stayfit.core.SingleFragmentActivity
-import com.breezesoftware.stayfit.fragments.PersonalSettingsFragment
 
 /**
  * This file is part of Test Kotlin Application

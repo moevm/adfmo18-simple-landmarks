@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit.graphs
+package com.breezesoftware.stayfit.home.graphs
 
 import android.content.Context
 import android.support.v4.app.Fragment

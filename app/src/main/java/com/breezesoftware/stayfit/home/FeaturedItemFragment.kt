@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit.widgets
+package com.breezesoftware.stayfit.home
 
 import android.content.Context
 import android.os.Bundle

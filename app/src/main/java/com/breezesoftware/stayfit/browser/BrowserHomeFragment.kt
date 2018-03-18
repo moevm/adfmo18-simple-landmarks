@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit.fragments
+package com.breezesoftware.stayfit.browser
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -15,18 +15,10 @@ import com.breezesoftware.stayfit.R
  * Created by popof on 18.03.2018.
  */
 
-class PersonalSettingsFragment : Fragment() {
-
-    companion object {
-        fun createInstance() : Fragment {
-            return PersonalSettingsFragment();
-        }
-    }
+class BrowserHomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater?.inflate(R.layout.personal_settings_fragment,
-                container, false);
-
+        val view = inflater?.inflate(R.layout.browser_home, container, false);
         return view;
     }
 }

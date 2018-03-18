@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit
+package com.breezesoftware.stayfit.home
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,8 @@ import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
 import android.widget.TextView
-import com.breezesoftware.stayfit.graphs.GraphsPagerAdapter
-import com.breezesoftware.stayfit.model.FeatureRepo
-import com.breezesoftware.stayfit.widgets.FeaturedPagerAdapter
+import com.breezesoftware.stayfit.R
+import com.breezesoftware.stayfit.home.graphs.GraphsPagerAdapter
 import com.breezesoftware.stayfit.widgets.MainMenu
 import com.tobishiba.circularviewpager.library.CircularViewPagerHandler
 
@@ -39,7 +38,10 @@ class MainActivity : AppCompatActivity() {
         setUpFeatured();
         setUpGraphs();
         setUpTextViews();
+        setUpMainMenu()
+    }
 
+    private fun setUpMainMenu() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout);
         mainMenu = MainMenu(drawerLayout, this);
         val navigationView = findViewById<NavigationView>(R.id.navigation_view);

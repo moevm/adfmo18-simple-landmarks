@@ -1,8 +1,9 @@
-package com.breezesoftware.stayfit.widgets
+package com.breezesoftware.stayfit.home
 
 import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import com.breezesoftware.stayfit.home.FeaturedItemFragment
 import com.tobishiba.circularviewpager.library.BaseCircularViewPagerAdapter
 
 

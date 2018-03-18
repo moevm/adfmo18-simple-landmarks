@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit.graphs
+package com.breezesoftware.stayfit.home.graphs
 
 import android.annotation.SuppressLint
 import android.os.Bundle

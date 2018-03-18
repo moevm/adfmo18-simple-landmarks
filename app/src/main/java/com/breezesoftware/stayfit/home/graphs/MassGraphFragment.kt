@@ -1,8 +1,5 @@
-package com.breezesoftware.stayfit.graphs
+package com.breezesoftware.stayfit.home.graphs
 
-import android.graphics.Color
-import android.os.Bundle
-import android.view.View
 import com.breezesoftware.stayfit.R
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries

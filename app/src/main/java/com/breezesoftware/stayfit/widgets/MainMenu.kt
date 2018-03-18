@@ -1,11 +1,11 @@
 package com.breezesoftware.stayfit.widgets
 
 import android.content.Context
-import android.content.Intent
 import android.support.design.widget.NavigationView
 import android.support.v4.widget.DrawerLayout
 import android.view.MenuItem
-import com.breezesoftware.stayfit.PersonalPageActivity
+import com.breezesoftware.stayfit.browser.BrowserActivity
+import com.breezesoftware.stayfit.personal.PersonalPageActivity
 import com.breezesoftware.stayfit.R
 
 /**
@@ -20,7 +20,6 @@ class MainMenu(private var drawerLayout : DrawerLayout, private var context : Co
     : NavigationView.OnNavigationItemSelectedListener {
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        item.isChecked = true;
         drawerLayout.closeDrawers();
 
         when(item.itemId) {
@@ -48,9 +47,13 @@ class MainMenu(private var drawerLayout : DrawerLayout, private var context : Co
     }
 
     private fun onProgramBrowser() {
+        val browser = BrowserActivity.newIntent(context);
+        context.startActivity(browser);
     }
 
     private fun onExerciseBrowser() {
+        val browser = BrowserActivity.newIntent(context);
+        context.startActivity(browser);
     }
 
     private fun onPersonalSettings() {

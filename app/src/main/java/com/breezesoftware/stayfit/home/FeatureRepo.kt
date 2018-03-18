@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit.model
+package com.breezesoftware.stayfit.home
 
 import com.breezesoftware.stayfit.R
 
