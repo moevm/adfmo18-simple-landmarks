@@ -14,12 +14,12 @@ import com.breezesoftware.stayfit.R
  * Created by popof on 18.03.2018.
  */
 
-abstract class SingleFragmentActivity() : AppCompatActivity() {
+abstract class SingleFragmentActivity : AppCompatActivity() {
 
     protected abstract fun createFragment() : Fragment;
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.single_fragment_activity);
 
         val fm = supportFragmentManager;
