@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit
+package com.breezesoftware.stayfit.widgets
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.breezesoftware.stayfit.R
 
 /**
  * This file is part of Test Kotlin Application

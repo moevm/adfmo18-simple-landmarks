@@ -1,12 +1,10 @@
-package com.breezesoftware.stayfit
+package com.breezesoftware.stayfit.graphs
 
 import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.breezesoftware.stayfit.graphs.BenchPressGraphFragment
-import com.breezesoftware.stayfit.graphs.ExampleGraphFragment
-import com.breezesoftware.stayfit.graphs.MassGraphFragment
+import com.breezesoftware.stayfit.R
 
 /**
  * This file is part of Test Kotlin Application
