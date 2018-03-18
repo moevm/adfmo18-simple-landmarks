@@ -33,4 +33,13 @@
     <string name="home">Home</string>
     <string name="programs">Programs</string>
     <string name="exercises">Exercise</string>
+    <string name="version_string">v 0.1 (2018.01)</string>
+    <string name="about_text">StayFit is fitness application that aims to help you to training in gym. StayFit offers you sport diary functionality, contains many usefull sport programs from best athletes, exercise browser to know more about different exercises.</string>
+    <string name="about_developers_title">Developers</string>
+    <string name="developer_george"><![CDATA[George Popoff <popoff96@live.com>]]></string>
+    <string name="developer_alex"><![CDATA[Alexey Komarov <comaralex>]]></string>
+    <string name="developer_ilya"><![CDATA[Ilya Kirpichny <ilya>]]></string>
+    <string name="copyright">Copyright 2018 © BreezeSoftware</string>
+    <string name="contacts">Contacts</string>
+    <string name="support_contacts"><![CDATA[Please, send all problems you found to this email: <popoff96@live.com>]]></string>
 </resources>

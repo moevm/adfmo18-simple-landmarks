@@ -7,6 +7,7 @@ import android.view.MenuItem
 import com.breezesoftware.stayfit.browser.BrowserActivity
 import com.breezesoftware.stayfit.personal.PersonalPageActivity
 import com.breezesoftware.stayfit.R
+import com.breezesoftware.stayfit.about.AboutActivity
 
 /**
  * This file is part of Test Kotlin Application
@@ -41,6 +42,8 @@ class MainMenu(private var drawerLayout : DrawerLayout, private var context : Co
     }
 
     private fun onAbout() {
+        val about = AboutActivity.newIntent(context);
+        context.startActivity(about);
     }
 
     private fun onSettings() {

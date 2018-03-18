@@ -18,8 +18,9 @@
         </activity>
         <activity
             android:name=".personal.PersonalPageActivity"
-            android:theme="@style/StayFitThemeWithActionBar"></activity>
-        <activity android:name=".browser.BrowserActivity"></activity>
+            android:theme="@style/StayFitThemeWithActionBar" />
+        <activity android:name=".browser.BrowserActivity" />
+        <activity android:name=".about.AboutActivity"></activity>
     </application>
 
 </manifest>
