@@ -1,5 +1,6 @@
 package com.breezesoftware.stayfit.browser
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -17,6 +18,8 @@ class BrowserActivity : AppCompatActivity() {
     private var mainTabLayout : TabLayout? = null;
     private var mainViewPager : ViewPager? = null;
 
+    private lateinit var viewModel : BrowserViewModel
+
     companion object {
         fun newIntent(from : Context) : Intent {
             return Intent(from, BrowserActivity::class.java);
@@ -28,6 +31,8 @@ class BrowserActivity : AppCompatActivity() {
         setContentView(R.layout.browser);
 
         setUpViewPager();
+
+        viewModel = ViewModelProviders.of(this).get(BrowserViewModel::class.java)
     }
 
     private fun setUpViewPager() {
