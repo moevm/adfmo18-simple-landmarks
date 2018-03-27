@@ -1,9 +1,12 @@
 package com.breezesoftware.stayfit.core.modules
 
 import android.content.Context
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.Volley
 import dagger.Module
 import dagger.Provides
 import org.jetbrains.annotations.NotNull
+import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
@@ -11,16 +14,15 @@ import javax.inject.Singleton
  *
  * You can do everything with the code and files
  *
- * Created by popof on 26.03.2018.
+ * Created by popof on 27.03.2018.
  */
 
 @Module
-class AppProvider(private var context: Context) {
-
+class NetworkProvider {
     @Provides
     @NotNull
     @Singleton
-    fun provideAppContext() : Context {
-        return context
+    fun provideRequestQueue(applicationContext: Context) : RequestQueue {
+        return Volley.newRequestQueue(applicationContext)
     }
 }
