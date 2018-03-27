@@ -9,5 +9,5 @@ package com.breezesoftware.stayfit.core
  */
 
 class AppConfig {
-    val SERVER_URL = "http://localhost"
+    val SERVER_URL = "http://40.69.38.50:27015"
 }

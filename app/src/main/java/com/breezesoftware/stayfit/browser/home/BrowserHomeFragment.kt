@@ -1,4 +1,4 @@
-package com.breezesoftware.stayfit.browser
+package com.breezesoftware.stayfit.browser.home
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.breezesoftware.stayfit.R
+import com.breezesoftware.stayfit.browser.BrowserViewModel
 
 /**
  * This file is part of Test Kotlin Application
@@ -26,7 +27,7 @@ class BrowserHomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         viewModel = ViewModelProviders.of(activity).get(BrowserViewModel::class.java)
-        viewModel.getBrowserCategories().observe(this,
+        viewModel.getBrowserCategories().observe(activity,
                 Observer { categories : List<BrowserCategory>? -> updateCategories(categories)} )
     }
 
@@ -36,7 +37,7 @@ class BrowserHomeFragment : Fragment() {
         }
 
         for (category in categories) {
-            Log.d("BrowserHomeFragment", category.name)
+            Log.d("StayFit", category.name)
         }
     }
 

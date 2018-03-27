@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.breezesoftware.stayfit.R
+import com.breezesoftware.stayfit.browser.home.BrowserHomeFragment
 
 /**
  * This file is part of Test Kotlin Application

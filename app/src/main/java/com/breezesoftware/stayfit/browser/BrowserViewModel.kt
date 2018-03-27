@@ -1,7 +1,7 @@
 package com.breezesoftware.stayfit.browser
 
 import android.arch.lifecycle.ViewModel
-import android.content.Context
+import com.breezesoftware.stayfit.browser.home.BrowserCategoriesLiveData
 import com.breezesoftware.stayfit.core.StayFitApp
 
 /**
