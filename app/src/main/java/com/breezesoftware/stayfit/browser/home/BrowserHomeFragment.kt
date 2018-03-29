@@ -4,7 +4,8 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,8 @@ import com.breezesoftware.stayfit.browser.BrowserViewModel
 class BrowserHomeFragment : Fragment() {
 
     private lateinit var viewModel : BrowserViewModel
+    private lateinit var categoriesRecycler : RecyclerView
+    private lateinit var categoriesRecyclerAdapter : BrowserRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +34,26 @@ class BrowserHomeFragment : Fragment() {
                 Observer { categories : List<BrowserCategory>? -> updateCategories(categories)} )
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        categoriesRecycler = view.findViewById(R.id.categoriesRecycler)
+        setCategoriesRecycler()
+    }
+
+    private fun setCategoriesRecycler() {
+        val layoutManager = LinearLayoutManager(activity)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+        categoriesRecycler.layoutManager = layoutManager
+        categoriesRecycler.setHasFixedSize(true)
+    }
+
     private fun updateCategories(categories : List<BrowserCategory>?) {
         if (categories == null) {
             return;
         }
 
-        for (category in categories) {
-            Log.d("StayFit", category.name)
-        }
+        this.categoriesRecyclerAdapter = BrowserRecyclerAdapter(
+                activity.supportFragmentManager, categories)
+        categoriesRecycler.adapter = this.categoriesRecyclerAdapter
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {

@@ -22,7 +22,7 @@ class FeaturedItemFragment() : Fragment() {
     private var drawableId: Int = R.drawable.featured01;
 
     companion object {
-        fun newInstance(context: Context, drawableId: Int): FeaturedItemFragment {
+        fun newInstance(drawableId: Int): FeaturedItemFragment {
             val item = FeaturedItemFragment();
             item.drawableId = drawableId;
 

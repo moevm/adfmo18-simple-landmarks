@@ -19,6 +19,6 @@ class FeaturedPagerAdapter(private var context: Context, fm: FragmentManager, fe
     : BaseCircularViewPagerAdapter<Int>(fm, features) {
 
     override fun getFragmentForItem(item: Int): Fragment {
-        return FeaturedItemFragment.newInstance(context, item);
+        return FeaturedItemFragment.newInstance(item);
     }
 }
