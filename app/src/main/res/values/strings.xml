@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">StayFit</string>
     <string name="undefined">Undefined</string>
+    <string name="free">Free</string>
+    <string name="rating">Rating</string>
 
     <string name="main_graphs">Progress Graphs</string>
     <string name="main_graphs_mass">Mass Gain</string>
