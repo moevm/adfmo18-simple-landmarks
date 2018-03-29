@@ -1,9 +1,7 @@
 package com.breezesoftware.stayfit.core
 
 import com.breezesoftware.stayfit.browser.BrowserActivity
-import com.breezesoftware.stayfit.browser.BrowserPagerAdapter
 import com.breezesoftware.stayfit.browser.home.BrowserCategoriesLiveData
-import com.breezesoftware.stayfit.browser.home.BrowserCategoryItemFragment
 import com.breezesoftware.stayfit.browser.home.BrowserCategoryPagerAdapter
 import com.breezesoftware.stayfit.core.modules.AppProvider
 import com.breezesoftware.stayfit.core.modules.NetworkProvider
@@ -24,7 +22,6 @@ interface StayFitComponent {
     fun inject(activity: BrowserActivity)
     fun inject(liveData: BrowserCategoriesLiveData)
     fun inject(adapter: BrowserCategoryPagerAdapter)
-    fun inject(fragment: BrowserCategoryItemFragment)
 
     @Singleton
     fun getBrowserCategoriesLiveData() : BrowserCategoriesLiveData
