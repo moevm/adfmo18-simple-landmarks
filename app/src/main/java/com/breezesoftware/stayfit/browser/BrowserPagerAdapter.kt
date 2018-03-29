@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.breezesoftware.stayfit.R
 import com.breezesoftware.stayfit.browser.home.BrowserHomeFragment
+import com.breezesoftware.stayfit.browser.programs.BrowserProgramsFragment
 
 /**
  * This file is part of Test Kotlin Application
@@ -25,7 +26,7 @@ class BrowserPagerAdapter(fm : FragmentManager, private var context : Context) :
         return when(position) {
             0 -> BrowserHomeFragment();
             else -> {
-                BrowserHomeFragment();
+                BrowserProgramsFragment();
             }
         }
     }
