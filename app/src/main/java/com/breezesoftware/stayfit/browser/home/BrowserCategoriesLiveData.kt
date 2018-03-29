@@ -3,6 +3,7 @@ package com.breezesoftware.stayfit.browser.home
 import android.arch.lifecycle.LiveData
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.VolleyError
@@ -54,7 +55,7 @@ class BrowserCategoriesLiveData
         // TODO: multithreading
         (0 until jsonCategories.length())
                 .map { BrowserCategory.fromJSON(jsonCategories.getJSONObject(it)) }
-                //.filter { it.items.isNotEmpty() }
+                .filter { it.items.isNotEmpty() }
                 .forEach {
                     categories.add(it)
                 }
@@ -63,7 +64,7 @@ class BrowserCategoriesLiveData
     }
 
     private fun onRequestFail(error : VolleyError) {
-        Log.e("StayFit", "Failed to get result: " + error.toString())
+        Toast.makeText(context, error.localizedMessage, Toast.LENGTH_LONG).show()
     }
 
 }
