@@ -47,7 +47,8 @@ class BrowserRecyclerAdapter(private var fm : FragmentManager, var categories : 
         val categoryName = holder?.categoryCard?.findViewById<TextView>(R.id.categoryName)
 
         categoryName?.text = categories[position].name
-        pager?.adapter = BrowserCategoryPagerAdapter(categories[position].items)
+        pager?.adapter = BrowserCategoryPagerAdapter(categories[position].items,
+                categories[position].itemType)
 
         Log.d(TAG, String.format("Bind view holder on position %d. Category = %s",
                 position, categoryName?.text));

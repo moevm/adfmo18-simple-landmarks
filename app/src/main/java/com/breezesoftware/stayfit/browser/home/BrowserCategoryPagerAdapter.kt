@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.breezesoftware.stayfit.R
 import com.breezesoftware.stayfit.browser.BrowserItem
@@ -24,7 +25,7 @@ import javax.inject.Inject
  * Created by popof on 28.03.2018.
  */
 
-class BrowserCategoryPagerAdapter(private var items: List<BrowserItem>)
+class BrowserCategoryPagerAdapter(private var items: List<BrowserItem>, private var itemType: String)
     : PagerAdapter() {
 
     @Inject
@@ -32,6 +33,16 @@ class BrowserCategoryPagerAdapter(private var items: List<BrowserItem>)
 
     init {
         StayFitApp.component.inject(this)
+    }
+
+    companion object {
+        private val difficultyStrings = hashMapOf<Int, Int>(
+                1 to R.string.difficulty_very_easy,
+                2 to R.string.difficulty_easy,
+                3 to R.string.difficulty_normal,
+                4 to R.string.difficulty_hard,
+                5 to R.string.difficulty_very_hard
+        )
     }
 
     override fun instantiateItem(container: ViewGroup?, position: Int): Any {
@@ -46,22 +57,30 @@ class BrowserCategoryPagerAdapter(private var items: List<BrowserItem>)
     }
 
     private fun setCategoryItem(browserItemView : View, position : Int) {
-        //val imageView = browserItemView?.findViewById<ImageView>(R.id.itemImage)
+        val imageView = browserItemView.findViewById<ImageView>(R.id.itemImage)
         val nameTV = browserItemView.findViewById<TextView>(R.id.itemName)
-        val descriptionTV = browserItemView.findViewById<TextView>(R.id.itemDescription)
+        //val descriptionTV = browserItemView.findViewById<TextView>(R.id.itemDescription)
+        val difficultyTV = browserItemView.findViewById<TextView>(R.id.itemDifficulty)
         val priceTV = browserItemView.findViewById<TextView>(R.id.itemPrice)
         val ratingTV = browserItemView.findViewById<TextView>(R.id.itemRating)
 
         val item = items[position]
 
         nameTV?.text = item.name
-        descriptionTV?.text = item.description
+        //descriptionTV?.text = item.description
 
-        if (item.price == 0) {
+        imageView.setImageResource(R.drawable.featured01)
+        imageView.contentDescription = item.description
+        imageView.visibility = View.VISIBLE
+
+        if (item.price != 0) {
             priceTV?.text = item.price.toString()
         } else {
             priceTV?.text = context.getString(R.string.free)
         }
+
+        difficultyTV?.text = context.getString(
+                difficultyStrings[item.difficulty] ?: R.string.difficulty_normal)
 
         ratingTV?.text = String.format("%s %d/5", context.getString(R.string.rating), item.rating)
     }

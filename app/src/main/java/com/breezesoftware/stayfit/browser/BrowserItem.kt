@@ -15,6 +15,7 @@ class BrowserItem(
         var description : String,
         var price : Int,
         var image : String,
+        var difficulty : Int,
         var rating : Int
 ) {
 
@@ -25,8 +26,9 @@ class BrowserItem(
             val price = json.getInt("Price")
             val image = json.getString("Image")
             val rating = json.getInt("Rating")
+            val difficulty = json.getInt("Difficulty")
 
-            return BrowserItem(name, description, price, image, rating)
+            return BrowserItem(name, description, price, image, difficulty, rating)
         }
     }
 
