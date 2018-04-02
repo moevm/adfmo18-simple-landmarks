@@ -2,7 +2,6 @@ package com.breezesoftware.stayfit.browser.home
 
 import android.arch.lifecycle.LiveData
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -23,7 +22,7 @@ import javax.inject.Inject
 class BrowserCategoriesLiveData
     : LiveData<List<BrowserCategory>> {
 
-    private val REQUEST_URL = StayFitApp.config.SERVER_URL + "/get/browserCategories?from=0&to=5"
+    private val REQUEST_URL = StayFitApp.config.SERVER_URL_STRING + "/get/browserCategories?from=0&to=5"
 
     private var categories = ArrayList<BrowserCategory>()
 

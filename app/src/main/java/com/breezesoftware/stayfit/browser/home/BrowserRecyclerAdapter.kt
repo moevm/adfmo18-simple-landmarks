@@ -4,6 +4,7 @@ import android.app.ActionBar
 import android.content.Context
 import android.support.constraint.ConstraintLayout
 import android.support.v4.app.FragmentManager
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import android.widget.TextView
 import com.breezesoftware.stayfit.R
 import com.breezesoftware.stayfit.browser.BrowserItem
 import com.breezesoftware.stayfit.core.StayFitApp
+import com.breezesoftware.stayfit.tasks.DownloadImageTask
 import javax.inject.Inject
 
 /**
@@ -84,8 +86,12 @@ class BrowserRecyclerAdapter(private var fm : FragmentManager, private var categ
             nameTV?.text = item.name
             //descriptionTV?.text = item.description
 
-            imageView.setImageResource(R.drawable.featured01)
             imageView.contentDescription = item.description
+
+            // Асинхронно закачиваем изображение
+            DownloadImageTask(imageView,
+                    ContextCompat.getDrawable(context, R.drawable.image_not_found))
+                    .execute(item.image)
 
             if (item.price != 0) {
                 priceTV?.text = item.price.toString()
