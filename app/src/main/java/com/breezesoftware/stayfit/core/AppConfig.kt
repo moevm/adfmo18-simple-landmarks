@@ -1,5 +1,7 @@
 package com.breezesoftware.stayfit.core
 
+import java.net.URL
+
 /**
  * This file is part of Test Kotlin Application
  *
@@ -9,5 +11,10 @@ package com.breezesoftware.stayfit.core
  */
 
 class AppConfig {
-    val SERVER_URL = "http://40.69.38.50:27015"
+    val SERVER_PROTOCOL = "http"
+    val SERVER_HOST = "40.69.38.50"
+    val SERVER_PORT = 27015
+
+    val SERVER_URL_STRING = "$SERVER_PROTOCOL://$SERVER_HOST:$SERVER_PORT"
+    val SERVER_URL = URL(SERVER_URL_STRING)
 }
