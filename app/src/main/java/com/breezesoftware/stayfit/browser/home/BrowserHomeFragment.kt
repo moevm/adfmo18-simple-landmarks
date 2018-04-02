@@ -42,6 +42,7 @@ class BrowserHomeFragment : Fragment() {
     private fun setCategoriesRecycler() {
         val layoutManager = LinearLayoutManager(activity)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
+
         categoriesRecycler.layoutManager = layoutManager
         //categoriesRecycler.setHasFixedSize(true)
     }
