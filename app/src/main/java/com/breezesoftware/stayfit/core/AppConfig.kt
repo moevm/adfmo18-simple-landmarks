@@ -12,7 +12,7 @@ import java.net.URL
 
 class AppConfig {
     val SERVER_PROTOCOL = "http"
-    val SERVER_HOST = "40.69.38.50"
+    val SERVER_HOST = "breezegames.cloudapp.net"
     val SERVER_PORT = 27015
 
     val SERVER_URL_STRING = "$SERVER_PROTOCOL://$SERVER_HOST:$SERVER_PORT"
