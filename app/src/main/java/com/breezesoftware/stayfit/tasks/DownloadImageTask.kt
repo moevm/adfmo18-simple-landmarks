@@ -1,16 +1,12 @@
 package com.breezesoftware.stayfit.tasks
 
-import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.AsyncTask
 import android.widget.ImageView
-import android.widget.Toast
-import com.breezesoftware.stayfit.R
 import com.breezesoftware.stayfit.core.StayFitApp
 import java.io.FileNotFoundException
 import java.lang.ref.WeakReference
 import java.net.URL
-import javax.inject.Inject
 
 /**
  * This file is part of Test Kotlin Application
@@ -40,11 +36,11 @@ class DownloadImageTask
 
     override fun doInBackground(vararg files: String): Drawable? {
         for (file in files) {
-            try {
+            return try {
                 val input = URL(REQUEST_URL + file).openStream()
-                return Drawable.createFromStream(input, "fileSrc")
+                Drawable.createFromStream(input, "fileSrc")
             } catch(e : FileNotFoundException) {
-                return notFoundImage
+                notFoundImage
             }
         }
 
