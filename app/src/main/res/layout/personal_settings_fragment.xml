@@ -26,6 +26,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -42,27 +44,38 @@
         app:layout_constraintTop_toBottomOf="@+id/name_edit"
         tools:text="Age" />
 
-    <RadioButton
-        android:id="@+id/male_rb"
+    <RadioGroup
+        android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/male"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        tools:text="Male" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15">
 
-    <RadioButton
-        android:id="@+id/female_rb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/female"
-        app:layout_constraintStart_toEndOf="@+id/male_rb"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        tools:text="Female" />
+        <RadioButton
+            android:id="@+id/male_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="@string/male"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            tools:text="Male" />
+
+        <RadioButton
+            android:id="@+id/female_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="@string/female"
+            app:layout_constraintStart_toEndOf="@+id/male_rb"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            tools:text="Female" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/textView8"
@@ -85,7 +98,7 @@
         android:text="@string/weight"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/male_rb"
+        app:layout_constraintTop_toBottomOf="@+id/gender"
         tools:text="Weight" />
 
     <EditText
@@ -94,6 +107,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +121,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -116,6 +133,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,6 +166,7 @@
 
     <Spinner
         android:id="@+id/experience_spinner"
+        android:entries="@array/experience_array"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -158,6 +178,7 @@
 
     <Spinner
         android:id="@+id/goal_spinner"
+        android:entries="@array/goal_array"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

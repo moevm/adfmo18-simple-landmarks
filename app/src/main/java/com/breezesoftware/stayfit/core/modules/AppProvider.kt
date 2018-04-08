@@ -1,6 +1,9 @@
 package com.breezesoftware.stayfit.core.modules
 
+import android.accounts.AccountManager
 import android.content.Context
+import android.content.SharedPreferences
+import com.breezesoftware.stayfit.core.user.User
 import dagger.Module
 import dagger.Provides
 import org.jetbrains.annotations.NotNull
@@ -22,5 +25,19 @@ class AppProvider(private var context: Context) {
     @Singleton
     fun provideAppContext() : Context {
         return context
+    }
+
+    @Provides
+    @NotNull
+    @Singleton
+    fun provideUser() : User {
+        return User();
+    }
+
+    @Provides
+    @NotNull
+    @Singleton
+    fun provideAccountManager() : AccountManager {
+        return AccountManager.get(context);
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="saved_name">USER_PREFERENCES_SAVED_NAME</string>
+    <string name="saved_age">USER_PREFERENCES_SAVED_AGE</string>
+    <string name="saved_gender">USER_PREFERENCES_SAVED_GENDER</string>
+    <string name="saved_weight">USER_PREFERENCES_SAVED_WEIGHT</string>
+    <string name="saved_height">USER_PREFERENCES_SAVED_HEIGHT</string>
+    <string name="saved_experience">USER_PREFERENCES_SAVED_EXPERIENCE</string>
+    <string name="saved_goal">USER_PREFERENCES_SAVED_GOAL</string>
+
+    <string-array name="experience_array">
+        <item>Novice</item>
+        <item>Elementary</item>
+        <item>Pre Intermediate</item>
+        <item>Intermediate</item>
+        <item>Pre Advanced</item>
+        <item>Advanced</item>
+        <item>Professional</item>
+    </string-array>
+
+    <string-array name="goal_array">
+        <item>I Want To Gain Mass</item>
+        <item>I Want To Loss Some Weight</item>
+    </string-array>
+</resources>

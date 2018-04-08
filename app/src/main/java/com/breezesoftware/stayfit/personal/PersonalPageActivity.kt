@@ -1,5 +1,6 @@
 package com.breezesoftware.stayfit.personal
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -17,6 +18,8 @@ import com.breezesoftware.stayfit.core.SingleFragmentActivity
 
 class PersonalPageActivity : SingleFragmentActivity() {
 
+    private lateinit var viewModel: PersonalViewModel
+
     companion object {
         fun newIntent(from : Context) : Intent {
             return Intent(from, PersonalPageActivity::class.java);
@@ -25,6 +28,8 @@ class PersonalPageActivity : SingleFragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
+
+        viewModel = ViewModelProviders.of(this).get(PersonalViewModel::class.java)
     }
 
     override fun createFragment(): Fragment {

@@ -5,6 +5,8 @@ import com.breezesoftware.stayfit.browser.home.BrowserCategoriesLiveData
 import com.breezesoftware.stayfit.browser.home.BrowserRecyclerAdapter
 import com.breezesoftware.stayfit.core.modules.AppProvider
 import com.breezesoftware.stayfit.core.modules.NetworkProvider
+import com.breezesoftware.stayfit.core.user.User
+import com.breezesoftware.stayfit.personal.PersonalViewModel
 import dagger.Component
 import javax.inject.Singleton
 
@@ -22,6 +24,8 @@ interface StayFitComponent {
     fun inject(activity: BrowserActivity)
     fun inject(liveData: BrowserCategoriesLiveData)
     fun inject(holder: BrowserRecyclerAdapter.CategoryHolder)
+    fun inject(user: User)
+    fun inject(viewModel: PersonalViewModel)
 
     @Singleton
     fun getBrowserCategoriesLiveData() : BrowserCategoriesLiveData
