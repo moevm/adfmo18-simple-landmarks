@@ -1,5 +1,7 @@
 package com.breezesoftware.stayfit.home
 
+import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -26,9 +28,14 @@ class MainActivity : AppCompatActivity() {
 
     private var mainMenu : MainMenu? = null;
 
+    private lateinit var viewModel : HomeViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        viewModel = ViewModelProviders.of(this)
+                .get(HomeViewModel::class.java)
 
         setUpWidgets();
     }
@@ -58,11 +65,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpTextViews() {
+        val user = viewModel.user
+
         welcomeTV = findViewById(R.id.welcome_tv);
         nextTrainingTV = findViewById(R.id.next_training_tv);
         achievementTV = findViewById(R.id.achivement_tv);
 
-        welcomeTV?.text = getString(R.string.main_welcome, "George");
+        welcomeTV?.text = getString(R.string.main_welcome, user.name);
         nextTrainingTV?.text = getString(R.string.main_next_training, "Tomorrow");
         achievementTV?.text = getString(R.string.main_achievement, 10);
     }
