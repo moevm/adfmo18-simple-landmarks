@@ -1,6 +1,7 @@
 package com.breezesoftware.stayfit.personal
 
 import android.arch.lifecycle.ViewModelProviders
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.breezesoftware.stayfit.R
+import com.breezesoftware.stayfit.core.StayFitApp
 import com.breezesoftware.stayfit.core.user.User
+import com.breezesoftware.stayfit.databinding.PersonalSettingsFragmentBinding
 
 /**
  * This file is part of Test Kotlin Application
@@ -39,15 +42,18 @@ class PersonalSettingsFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.personal_settings_fragment,
-                container, false);
+        val bindings : PersonalSettingsFragmentBinding = DataBindingUtil
+                .inflate(inflater, R.layout.personal_settings_fragment,
+                        container, false)
 
-        viewModel = ViewModelProviders.of(this).get(PersonalViewModel::class.java)
+        viewModel = ViewModelProviders.of(activity).get(PersonalViewModel::class.java)
 
-        loadElements(view)
-        updateElements()
+        /* Привязываем объект пользователя к форме */
+        bindings.user = viewModel.user
 
-        return view;
+        loadElements(bindings.layout)
+
+        return bindings.layout;
     }
 
     private fun loadElements(view: View) {
@@ -65,49 +71,12 @@ class PersonalSettingsFragment : Fragment() {
         goalSpinner = view.findViewById(R.id.goal_spinner)
     }
 
-    private fun updateElements() {
-        val user = viewModel.user
-
-        nameEdit.setText(user.name)
-        ageEdit.setText(user.age.toString())
-
-        when (user.gender) {
-            User.GENDER_MALE -> genderGroup.check(R.id.male_rb)
-            User.GENDER_FEMALE -> genderGroup.check(R.id.female_rb)
-        }
-
-        weightEdit.setText(user.weight.toString())
-        heightEdit.setText(user.height.toString())
-
-        experienceSpinner.setSelection(user.experience)
-        goalSpinner.setSelection(user.goal)
-    }
-
-    private fun setHandlers() {
-    }
-
     /**
      * Введенные данные сохраняются когда активити
      * переходит в состояние паузы
-     *
-     * TODO: use android data binding library
      */
     override fun onPause() {
         val user = viewModel.user
-
-        user.name = nameEdit.text.toString()
-        user.age = ageEdit.text.toString().toInt()
-        user.weight = weightEdit.text.toString().toFloat()
-        user.height = heightEdit.text.toString().toFloat()
-
-        user.gender = when (genderGroup.checkedRadioButtonId) {
-            R.id.male_rb -> User.GENDER_MALE
-            R.id.female_rb -> User.GENDER_FEMALE
-            else -> User.GENDER_MALE
-        }
-
-        user.experience = experienceSpinner.selectedItemPosition
-        user.goal = goalSpinner.selectedItemPosition
 
         user.save()
 

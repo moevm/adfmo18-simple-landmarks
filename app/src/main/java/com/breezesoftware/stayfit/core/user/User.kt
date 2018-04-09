@@ -37,9 +37,9 @@ class User {
 
     var gender : Int = GENDER_MALE
 
-    var weight : Float = 70.0f
+    var weight : Int = 70
 
-    var height : Float = 170.0f
+    var height : Int = 170
 
     var experience : Int = EXPERIENCE_NOVICE
 
@@ -95,8 +95,8 @@ class User {
         name = sharedPreferences.getString(context.getString(R.string.saved_name), "")
         age = sharedPreferences.getInt(context.getString(R.string.saved_age), 25)
         gender = sharedPreferences.getInt(context.getString(R.string.saved_gender), GENDER_MALE)
-        weight = sharedPreferences.getFloat(context.getString(R.string.saved_weight), 70.0f)
-        height = sharedPreferences.getFloat(context.getString(R.string.saved_height), 170.0f)
+        weight = sharedPreferences.getInt(context.getString(R.string.saved_weight), 70)
+        height = sharedPreferences.getInt(context.getString(R.string.saved_height), 170)
         experience = sharedPreferences.getInt(context.getString(R.string.saved_experience), EXPERIENCE_NOVICE)
         goal = sharedPreferences.getInt(context.getString(R.string.saved_goal), GOAL_MASS_GAIN)
     }
@@ -107,11 +107,45 @@ class User {
         editor.putString(context.getString(R.string.saved_name),name)
         editor.putInt(context.getString(R.string.saved_age), age)
         editor.putInt(context.getString(R.string.saved_gender), gender)
-        editor.putFloat(context.getString(R.string.saved_weight), weight)
-        editor.putFloat(context.getString(R.string.saved_height), height)
+        editor.putInt(context.getString(R.string.saved_weight), weight)
+        editor.putInt(context.getString(R.string.saved_height), height)
         editor.putInt(context.getString(R.string.saved_experience), experience)
         editor.putInt(context.getString(R.string.saved_goal), goal)
 
         editor.apply()
+    }
+
+    /* Методы для корректной работы DataBinding */
+    fun isMale() = gender == GENDER_MALE
+    fun isFemale() = gender == GENDER_FEMALE
+
+    fun setIsMale(isMale: Boolean) {
+        if (isMale) {
+            gender = GENDER_MALE
+        }
+    }
+
+    fun setIsFemale(isFemale: Boolean) {
+        if (isFemale) {
+            gender = GENDER_FEMALE
+        }
+    }
+
+    fun getAgeString() = Integer.toString(age)
+
+    fun setAgeString(string: String) {
+        age = string.toIntOrNull() ?: 0
+    }
+
+    fun getWeightString() = Integer.toString(weight)
+
+    fun setWeightString(string: String) {
+        weight = string.toIntOrNull() ?: 0
+    }
+
+    fun getHeightString() = Integer.toString(height)
+
+    fun setHeightString(string: String) {
+        height = string.toIntOrNull() ?: 0
     }
 }
