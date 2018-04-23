@@ -20,10 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".browser.BrowserActivity" />
+        <activity android:name=".about.AboutActivity" />
+
         <activity
             android:name=".personal.PersonalPageActivity"
             android:theme="@style/StayFitThemeWithActionBar" />
-        <activity android:name=".browser.BrowserActivity" />
-        <activity android:name=".about.AboutActivity"></activity>
+        <activity
+            android:name=".training.TrainingActivity" />
     </application>
 </manifest>

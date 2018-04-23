@@ -8,9 +8,11 @@ import android.support.design.widget.NavigationView
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
 import android.support.v4.widget.DrawerLayout
+import android.widget.Button
 import android.widget.TextView
 import com.breezesoftware.stayfit.R
 import com.breezesoftware.stayfit.home.graphs.GraphsPagerAdapter
+import com.breezesoftware.stayfit.training.TrainingActivity
 import com.breezesoftware.stayfit.widgets.MainMenu
 import com.tobishiba.circularviewpager.library.CircularViewPagerHandler
 
@@ -25,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     private var welcomeTV : TextView? = null;
     private var nextTrainingTV : TextView? = null;
     private var achievementTV : TextView? = null;
+
+    private lateinit var startTrainingButton : Button;
 
     private var mainMenu : MainMenu? = null;
 
@@ -46,6 +50,13 @@ class MainActivity : AppCompatActivity() {
         setUpGraphs();
         setUpTextViews();
         setUpMainMenu()
+
+        startTrainingButton = findViewById(R.id.start_training_button);
+
+        startTrainingButton.setOnClickListener({
+            val intent = TrainingActivity.newIntent(this);
+            startActivity(intent);
+        });
     }
 
     private fun setUpMainMenu() {
